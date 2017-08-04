@@ -1,0 +1,71 @@
+/* app css stylesheet */
+
+/* Add some padding to our icon to make Navbar look nice */
+.brand-icon {
+  padding-right: 5px;
+}
+
+
+.bt-create-work-order {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+/* Style Red 'X' on expanded work order view */
+.close-order {
+  float: right;
+  color: #ff4d4d;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* Style delete button on expanded work order view */
+.delete-order {
+  float: right;
+  color: #a3a3c2;
+  font-size: 1.5em;
+}
+
+/* Make cursor change on hover over change status button */
+.change-status-button{
+  cursor: pointer;
+}
+
+/* Change cursor to a pointer on hover over work order entries in list */
+.eachEntry {
+  cursor: pointer;
+}
+
+/* Style Delete Work Order button in expanded view */
+.delete-key {
+  background: red;
+  cursor: pointer;
+  color: white;
+}
+
+.delete-key:hover {
+  background: #b30000;
+}
+
+/* Style change status toggle button on expanded view */
+.change-status-button:hover {
+  background: #74a9d8;
+}
+
+/* This styles the text shown on "create new work order" when some of the required fields have not been entered */
+.invalid-fields {
+  color: red;
+}
+
+.optional-input {
+  color: green;
+}
+
+.required-input {
+  color: red;
+}
+
+/*This is a hack to make our new job notes show up on new lines when we add notes to a work order (we hard code a \n before each new note*/
+.notes-panel {
+  white-space: pre-wrap;
+}

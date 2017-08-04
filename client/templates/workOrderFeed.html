@@ -1,0 +1,63 @@
+<div class="well text-center">
+
+
+
+
+  <!-- This section is a div to store the create new work order view. -->
+  <div class="create-work-order-form-section">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Create New Work Order</h3>
+      </div>
+      <div class="panel-body">
+      <!-- Input groups for creating new work order -->
+
+        <!-- Client Name -->
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">Client:</span>
+          <input type="text" class="form-control wo-client-name" ng-model="$ctrl.woClientName" placeholder="Enter Client Name" aria-describedby="basic-addon1">
+          <span class="input-group-addon required-input" id="basic-addon1"><i>required</i></span>
+        </div>
+
+        <!-- Estimated Duration -->
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">Estimated Duration:</span>
+          <input type="text" class="form-control wo-estimated-duration" ng-model="$ctrl.woEstimatedDuration" placeholder="Ex: 6 hours, 4 weeks, 12 business days" aria-describedby="basic-addon1">
+          <span class="input-group-addon required-input" id="basic-addon1"><i>required</i></span>
+        </div>
+
+          <!-- Job Details -->
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Details:</span>
+            <input type="text" class="form-control wo-job-details" ng-model="$ctrl.woJobDetails" placeholder="Enter Job Details" aria-describedby="basic-addon1">
+            <span class="input-group-addon required-input" id="basic-addon1"><i>required</i></span>
+          </div>
+
+          <!-- Image URL -->
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Photo URL:</span>
+            <input type="text" class="form-control wo-photo-url" ng-model="$ctrl.woPhotoUrl" placeholder="http://vignette2.wikia.nocookie.net/p__/images/6/68/2252541-snake_l.jpeg/revision/latest?cb=20140314003849&path-prefix=protagonist" aria-describedby="basic-addon1">
+            <span class="input-group-addon optional-input" id="basic-addon1"><i>optional</i></span>
+          </div>
+
+          <!-- Show warning message if fields were not entered -->
+          <div class="row" ng-if="$ctrl.invalidFields">
+            <i class="invalid-fields">Missing required fields.</i>
+          </div>
+
+
+        <!-- Button for creating new work orders -->
+        <button type="button" class="btn btn-lg btn-primary bt-create-work-order" data-dismiss="alert" ng-click="$ctrl.createWorkOrder($event); $ctrl.appGetWorkOrders()">Submit</button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Expanded view to show work order details.  TODO: make this show up where the mouse was clicked as popup instead of near the top of the page in a statically located DIV.  (If there are many work orders, you have to scroll up to view the detail view.  Not a great user experience.) -->
+  <div ng-if="$ctrl.show">
+    <work-order-expanded toggle="$ctrl.toggle"  app-get-work-orders="$ctrl.appGetWorkOrders" app-work-order="$ctrl.appWorkOrders"/>
+  </div>
+    <div class="entry-feed-section">
+      <work-order-entry class="eachEntry" ng-repeat="(orderIndex, order) in $ctrl.appWorkOrders" app-get-work-orders="$ctrl.appGetWorkOrders" order="order" index="orderIndex" ng-click="$ctrl.expandOrder(order, orderIndex)" />
+    </div>
+</div>

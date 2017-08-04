@@ -1,0 +1,21 @@
+<div class="col-md-6 col-md-offset-3">
+  <h3>Sign Up</h3>
+    <form name="form" ng-submit="$ctrl.createUser()">
+      <div class="form-group">
+        <input type="text" name="FirstName" id="firstname" placeholder="First name" class="form-control" ng-model="firstName" required/>
+      </div>
+      <div class="form-group">
+        <input type="text" name="LastName" id="lastname" placeholder="Last name" class="form-control" ng-model="lastName" required/>
+      </div>
+      <div class="form-group">
+        <input type="email" name="username" id="username" placeholder="Username (your email)" class="form-control" ng-model="userName" required/>
+      </div>
+      <div class="form-group">
+        <input type="text" name="password" id="password" placeholder="Password" class="form-control" ng-model="userPass" required/>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </div>
+    </form>
+    <span>Already a user? <button class="btn-no-background" ng-click="$ctrl.parent.toggleLoginSignup()">Log in</button></span>
+</div>

@@ -1,0 +1,34 @@
+<div class="container">
+  <!-- nav.html template file goes here -->
+  <nav class="navbar navbar-inverse">
+    <navigation show-logout="$ctrl.isContentHidden()"/>
+  </nav>
+  <div ng-if="$ctrl.isContentHidden()">
+    <login-signup />
+  </div>
+    <!-- User control section -->
+  <div ng-if="!$ctrl.isContentHidden()">
+  <div class="row">
+    <!-- User Profile -->
+    <div class="col-md-4"">
+      <!-- user-profile.html template file goes here -->
+      <user-profile />
+    </div>
+    <!-- User Controls -->
+    <div class="col-md-8">
+
+      <!-- Summary view - shows number of complete and in progress work orders -->
+        <work-order-summary complete-work-orders="$ctrl.completeWorkOrders" in-progress-work-orders="$ctrl.inProgressWorkOrders"/>
+
+    </div>
+  </div>
+  <!-- Work order feed -->
+  <div class="row">
+    <div class="col-md-12">
+      <!-- work-order-feed houses the work-order-entry templates to show a list of work orders as well as the create new work order section and the toggleable expanded work order view -->
+      <work-order-feed app-get-work-orders="$ctrl.getWorkOrders" app-work-orders="$ctrl.workOrders"/>
+
+    </div>
+  </div>
+  </div>
+</div>

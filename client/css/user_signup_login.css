@@ -1,0 +1,10 @@
+.btn-no-background {
+  border: none;
+  background: none;
+  color: #337ab7;
+}
+
+.error-text {
+  color: red;
+  margin-left: 30px;
+}

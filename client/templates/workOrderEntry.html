@@ -1,0 +1,26 @@
+<!--workOrderEntry.html is a view for each work order in the feed -->
+<div class="panel panel-primary">
+
+<!-- work order heading -->
+  <div class="panel-heading text-center">
+    <h5>Work Order # {{$ctrl.index + 1}} : {{$ctrl.order.job_info.slice(0,51)}} ...</h5>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+
+      <!-- Work order image -->
+      <div class="col-md-6">
+        <img src="{{$ctrl.order.photo}}" alt="https://public.snapon.com/R_RRD/Objects_lg/images/OES18B.jpg" width="180">
+      </div>
+
+      <!-- Work order details -->
+      <div class="col-md-6">
+        <ul class="list-group">
+          <li class="list-group-item"><b>Created:</b> {{$ctrl.order.created_at}}</li>
+          <li class="list-group-item"><b>Estimated time:</b> {{$ctrl.order.duration}}</li>
+          <li class="list-group-item"><b>Client:</b> {{$ctrl.order.client}}</li>
+        </ul>
+    </div>
+  </div>
+</div>
+</div>

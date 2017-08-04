@@ -1,0 +1,16 @@
+.change-photo-button {
+  border: none;
+  background: none;
+  font-size: 14px;
+  color: #337ab7;
+}
+
+.upload-photo {
+  margin-top: 20px;
+}
+
+.input-box {
+  width: 60%;
+  margin-left: 25px;
+  float: left;
+}
