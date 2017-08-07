@@ -1,1 +1,4 @@
 /node_modules
+/app.yaml
+/npm-debug.log
+/server/db/work_orders.sqlite

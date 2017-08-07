@@ -55,7 +55,6 @@ exports.getOrdersSelective = (req, res) => {
 
 exports.getOrdersUsername = (req, res) => {
   var username = req.params.username;
-  console.log('this is from api', username, req.body)
   dbHelpers.getOrdersUsername({username: username}, (orders) => {
     res.send(orders);
   });

@@ -1,25 +1,20 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-//var handleErrors = require('error-handler'); // to do, implement error handling
-
 var api = require('./routes/api');
 var http = require('http');
 var path = require('path');
+const PORT = process.env.PORT || 8080;
 
 var app = module.exports = express();
 
 // Configuration
 
-app.set('port', 8080);
+// app.set('port', 8080);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(express.static('../client')); //serve static content from client
+app.use(express.static(path.join(__dirname, '../client'))); //serve static content from client
 
 //API routes
-
-app.get('/', function(req, res) {
-  res.status(200).end();
-});  // client root
 
 app.post('/user-signup', api.userSignUp); // creates an admin user, mvp doesn't have other user roles yet
 app.post('/user-signin', api.userSignIn); // user login end point
@@ -33,9 +28,10 @@ app.put('/update-user', api.updateUser);//can update photo url or any other user
 
 app.get('/all-users', api.getAll); //testing purposes only
 
-console.log(Date()); // log date when server restarts
 // Start server
-http.createServer(app).listen(app.get('port'), function (req, res) {
-  console.log('Express server listening on port ' + app.get('port'));
-//to do - error handling
+
+app.listen(PORT, () => {
+  console.log(path.join(__dirname, '../client'))
+  console.log(`App listening on port ${PORT}`);
+  console.log('Press Ctrl+C to quit.');
 });

@@ -1,7 +1,13 @@
 {
-  "name": "application-name",
+  "name": "Workbase",
   "version": "0.0.1",
-  "private": true,
+  "main": "./server/app.js",
+  "engines": {
+    "node": ">=6.11.1"
+  },
+  "scripts": {
+    "start": "node ./server/app.js"
+  },
   "dependencies": {
     "body-parser": "^1.0.2",
     "bookshelf": "^0.10.3",

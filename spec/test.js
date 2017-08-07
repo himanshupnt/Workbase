@@ -39,11 +39,6 @@ describe('using sequelizeMockingMocha', function() {
   })
 
 
-
-
-
-//make sure himanshu's routes are being exported so I can then require them here
-
 ////////////////////testing work order functions ////////////////////
 
 //getting work orders from the db
@@ -75,11 +70,6 @@ describe('using sequelizeMockingMocha', function() {
     })
   })
 
-//editing work orders that currently exist on the db
-  //i.e setting completed to true or changing a description
-
-
-//deleting working orders that exist on the db
 
 
 ///////////////////testing users //////////////////
